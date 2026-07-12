@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtx7gidy88bp6" path="res://scripts/scriptplayer.gd" id="1_le3lr"]
 [ext_resource type="Texture2D" uid="uid://dmrn0vamthdrf" path="res://sprites/Sprite Pack 3/4 - Tommy/Idle_Poses (32 x 32).png" id="2_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://dtc3jwjlyujpa" path="res://sprites/Sprite Pack 3/4 - Tommy/Hurt (32 x 32).png" id="2_7y4ih"]
 [ext_resource type="Texture2D" uid="uid://cjeqw6w3lsrjg" path="res://sprites/Sprite Pack 3/4 - Tommy/Sleeping (32 x 32).png" id="2_opfg8"]
 [ext_resource type="Texture2D" uid="uid://bhjkp5yf5ysru" path="res://sprites/Sprite Pack 3/4 - Tommy/Falling_Poses (32 x 32).png" id="3_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://ddc5rt34bc4u7" path="res://sprites/Sprite Pack 3/4 - Tommy/Jumping (32 x 32).png" id="3_opfg8"]
@@ -9,6 +10,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qu0p"]
 size = Vector2(20, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1rr4"]
+atlas = ExtResource("2_7y4ih")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80po8"]
+atlas = ExtResource("2_opfg8")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opfg8"]
 atlas = ExtResource("2_opfg8")
@@ -64,6 +73,17 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6q55g"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1rr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80po8")
+}],
+"loop": 0,
+"name": &"dead",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_opfg8")
@@ -129,12 +149,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lr648"]
+height = 28.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1593442380 groups=["player"]]
-position = Vector2(122, 99)
+position = Vector2(121, 93)
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_le3lr")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845646383]
 position = Vector2(0, 3.5)
@@ -145,4 +167,13 @@ z_index = 1
 position = Vector2(0, 1.0000011)
 scale = Vector2(1.3125, 1.1249999)
 sprite_frames = SubResource("SpriteFrames_6q55g")
-animation = &"fall"
+animation = &"dead"
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=884544755]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=418441086]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_lr648")
+debug_color = Color(0.9206592, 0.10409529, 0.6418027, 0.41960785)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
