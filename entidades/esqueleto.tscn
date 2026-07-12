@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dx18y4vs5krsn"]
+
+[ext_resource type="Script" uid="uid://d0obpuu8o688y" path="res://scripts/esqueleto.gd" id="1_74aq7"]
+[ext_resource type="Texture2D" uid="uid://fe1cnnnhgeer" path="res://sprites/Sprite Pack 6/Sprite Pack 6/3 - Skeleton/Standing (32 x 32).png" id="1_gg4fw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74aq7"]
+atlas = ExtResource("1_gg4fw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6q55g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74aq7")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4q65j"]
+height = 36.0
+
+[node name="Esqueleto" type="CharacterBody2D" unique_id=468675592]
+script = ExtResource("1_74aq7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1833358448]
+position = Vector2(2.4999995, -6)
+scale = Vector2(1.15625, 1.375)
+sprite_frames = SubResource("SpriteFrames_6q55g")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819369295]
+position = Vector2(3, -2)
+shape = SubResource("CapsuleShape2D_4q65j")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=177678909]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1046864013]
