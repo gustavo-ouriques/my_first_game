@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://wpwxcgdhrchl"]
+
+[ext_resource type="Script" uid="uid://dtx7gidy88bp6" path="res://scripts/scriptplayer.gd" id="1_le3lr"]
+[ext_resource type="Texture2D" uid="uid://dmrn0vamthdrf" path="res://sprites/Sprite Pack 3/4 - Tommy/Idle_Poses (32 x 32).png" id="2_0p7bn"]
+[ext_resource type="Texture2D" uid="uid://cjeqw6w3lsrjg" path="res://sprites/Sprite Pack 3/4 - Tommy/Sleeping (32 x 32).png" id="2_opfg8"]
+[ext_resource type="Texture2D" uid="uid://ddc5rt34bc4u7" path="res://sprites/Sprite Pack 3/4 - Tommy/Jumping (32 x 32).png" id="3_opfg8"]
+[ext_resource type="Texture2D" uid="uid://q5twvilb6k7t" path="res://sprites/Sprite Pack 3/4 - Tommy/Walking (32 x 32).png" id="4_2qu0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qu0p"]
+size = Vector2(20, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opfg8"]
+atlas = ExtResource("2_opfg8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y4ih"]
+atlas = ExtResource("2_0p7bn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4ns2"]
+atlas = ExtResource("2_0p7bn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8mye"]
+atlas = ExtResource("2_0p7bn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd8fs"]
+atlas = ExtResource("2_0p7bn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlwsy"]
+atlas = ExtResource("3_opfg8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcte5"]
+atlas = ExtResource("4_2qu0p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wo38"]
+atlas = ExtResource("4_2qu0p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7jkh"]
+atlas = ExtResource("4_2qu0p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq7hh"]
+atlas = ExtResource("4_2qu0p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bqy4"]
+atlas = ExtResource("4_2qu0p")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_remub"]
+atlas = ExtResource("4_2qu0p")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6q55g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opfg8")
+}],
+"loop": 1,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7y4ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4ns2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8mye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd8fs")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlwsy")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcte5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wo38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7jkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq7hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bqy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_remub")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1593442380 groups=["player"]]
+position = Vector2(121, 100)
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_le3lr")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845646383]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_2qu0p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2011381918]
+z_index = 1
+position = Vector2(-1.0728836e-06, -0.5000013)
+scale = Vector2(1.3125, 1.21875)
+sprite_frames = SubResource("SpriteFrames_6q55g")
+animation = &"idle"

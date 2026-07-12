@@ -1,0 +1,77 @@
+[gd_scene format=4 uid="uid://blnayc0dmq4is"]
+
+[ext_resource type="PackedScene" uid="uid://wpwxcgdhrchl" path="res://entidades/player.tscn" id="1_v3mdc"]
+[ext_resource type="TileSet" uid="uid://7aid6gw03ncp" path="res://tiles/terreno.tres" id="2_xxtad"]
+[ext_resource type="Texture2D" uid="uid://c7o85bqr3src6" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/3 - Big_mountain_BG.png" id="3_pyllb"]
+[ext_resource type="Texture2D" uid="uid://0llq56kbiwq7" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/2 - Smaller_mountains.png" id="4_mwcpr"]
+[ext_resource type="Texture2D" uid="uid://vbt8sfphreqw" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/1 - Snowy_foreground_area.png" id="5_076ep"]
+[ext_resource type="TileSet" uid="uid://tj8xij5xfva4" path="res://tiles/decoracao.tres" id="6_076ep"]
+[ext_resource type="PackedScene" uid="uid://ch0f63oaedvyr" path="res://entidades/camera.tscn" id="7_7r1d5"]
+[ext_resource type="PackedScene" uid="uid://blx23ovpivj8a" path="res://entidades/level_end.tscn" id="8_g8n0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8n0t"]
+size = Vector2(40, 184)
+
+[node name="forest" type="Node2D" unique_id=1229582664]
+metadata/_edit_vertical_guides_ = [860.0]
+
+[node name="Terrenos" type="TileMapLayer" parent="." unique_id=1238391349]
+tile_map_data = PackedByteArray("AAAAAAwAAAACAAMAAAABAAwAAAACAAMAAAACAAwAAAACAAMAAAADAAwAAAACAAMAAAAEAAwAAAACAAMAAAAFAAwAAAACAAMAAAAGAAwAAAACAAMAAAAHAAwAAAACAAMAAAAIAAwAAAACAAMAAAAJAAwAAAACAAMAAAAKAAwAAAACAAMAAAALAAwAAAACAAMAAAAMAAwAAAACAAMAAAANAAwAAAACAAMAAAAOAAwAAAACAAMAAAAPAAwAAAACAAMAAAAQAAwAAAACAAMAAAARAAwAAAACAAMAAAASAAwAAAACAAMAAAATAAwAAAACAAMAAAAUAAwAAAACAAMAAAAVAAwAAAACAAMAAAAWAAwAAAACAAMAAAAXAAwAAAACAAMAAAAYAAwAAAACAAMAAAAZAAwAAAACAAMAAAAaAAwAAAACAAMAAAAbAAwAAAACAAMAAAAcAAwAAAACAAMAAAAdAAwAAAACAAMAAAAeAAwAAAACAAMAAAAfAAwAAAACAAMAAAAgAAwAAAACAAMAAAAhAAwAAAACAAMAAAAiAAwAAAACAAMAAAAjAAwAAAACAAMAAAAkAAwAAAACAAMAAAAlAAwAAAACAAMAAAAmAAwAAAACAAMAAAAnAAwAAAACAAMAAAALAAkAAAADAAEAAAAMAAkAAAAEAAEAAAANAAkAAAAFAAEAAAAPAAcAAAADAAEAAAAQAAcAAAAEAAEAAAARAAcAAAAFAAEAAAATAAUAAAADAAEAAAAUAAUAAAAEAAEAAAAVAAUAAAAFAAEAAAAoAAwAAAACAAMAAAApAAwAAAACAAMAAAAqAAwAAAACAAMAAAArAAwAAAACAAMAAAAsAAwAAAACAAMAAAAtAAwAAAACAAMAAAAuAAwAAAACAAMAAAAvAAwAAAACAAMAAAAwAAwAAAACAAMAAAAxAAwAAAACAAMAAAAyAAwAAAACAAMAAAAzAAwAAAACAAMAAAA0AAwAAAACAAMAAAA1AAwAAAACAAMAAAA2AAwAAAACAAMAAAAYAAIAAAAGAAMAAAAZAP//AAAGAAMAAAAbAPz/AAAGAAMAAAAeAPr/AAACAAMAAAAgAPj/AAACAAMAAAAiAPb/AAACAAMAAAAkAPT/AAACAAMAAAAmAPL/AAACAAMAAAAoAPD/AAACAAMAAAAqAO7/AAACAAMAAAAsAOz/AAACAAMAAAA=")
+tile_set = ExtResource("2_xxtad")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1773344590]
+
+[node name="3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1198988510]
+texture_repeat = 2
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/3" unique_id=1440819355]
+texture_repeat = 2
+texture = ExtResource("3_pyllb")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1407575584]
+texture_repeat = 2
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/2" unique_id=1762043467]
+texture_repeat = 2
+texture = ExtResource("4_mwcpr")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="1" type="ParallaxLayer" parent="ParallaxBackground" unique_id=84904904]
+motion_scale = Vector2(0.8, 0.4)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/1" unique_id=1489433981]
+texture_repeat = 2
+texture = ExtResource("5_076ep")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Decoracoes" type="TileMapLayer" parent="." unique_id=1132581233]
+tile_map_data = PackedByteArray("AAAZAAUACAANAAIAAAAZAAYACAANAAMAAAAZAAcACAANAAMAAAAZAAgACAANAAMAAAAZAAkACAANAAMAAAAZAAoACAANAAMAAAAZAAsACAANAAMAAAAaAAUACAAOAAIAAAAbAAUACAAOAAIAAAAcAAUACAAOAAIAAAAdAAUACAAOAAIAAAAeAAUACAAOAAIAAAAfAAUACAAOAAIAAAAgAAUACAAOAAIAAAAhAAUACAAOAAIAAAAiAAUACAANAAIAAAAYAAUACAAOAAIAAAAXAAUACAAOAAIAAAAWAAUACAAOAAIAAAAVAAYACAANAAMAAAAVAAcACAANAAMAAAAVAAgACAANAAMAAAAVAAkACAANAAMAAAAVAAoACAANAAMAAAAVAAsACAANAAMAAAAiAAYACAANAAMAAAAiAAcACAANAAMAAAAiAAgACAANAAMAAAAiAAkACAANAAMAAAAiAAoACAANAAMAAAAiAAsACAANAAMAAAAjAAUACAAOAAIAAAAkAAUACAAOAAIAAAAlAAUACAAOAAIAAAAmAAUACAAOAAIAAAAnAAUACAAOAAIAAAAoAAUACAAOAAIAAAApAAUACAAOAAIAAAAqAAUACAAOAAIAAAArAAUACAAOAAIAAAA3AAsACAAMAAUAAAA3AAwACAAMAAYAAAA4AAsACAAMAAUAAAA4AAwACAAMAAYAAAA5AAsACAAMAAUAAAA5AAwACAAMAAYAAAA6AAsACAAMAAUAAAA6AAwACAAMAAYAAAA7AAsACAAMAAUAAAA7AAwACAAMAAYAAAA8AAsACAAMAAUAAAA8AAwACAAMAAYAAAA9AAsACAAMAAUAAAA9AAwACAAMAAYAAAA+AAsACAAMAAUAAAA+AAwACAAMAAYAAAA/AAsACAAMAAUAAAA/AAwACAAMAAYAAABAAAsACAAMAAUAAABAAAwACAAMAAYAAABBAAsACAAMAAUAAABBAAwACAAMAAYAAABCAAsACAAMAAUAAABCAAwACAAMAAYAAABDAAsACAAMAAUAAABDAAwACAAMAAYAAABEAAsACAAMAAUAAABEAAwACAAMAAYAAABFAAsACAAMAAUAAABFAAwACAAMAAYAAABGAAsACAAMAAUAAABGAAwACAAMAAYAAABHAAsACAAMAAUAAABHAAwACAAMAAYAAABIAAsACAAMAAUAAABIAAwACAAMAAYAAABJAAsACAAMAAUAAABJAAwACAAMAAYAAABKAAsACAAMAAUAAABKAAwACAAMAAYAAABLAAsACAAMAAUAAABLAAwACAAMAAYAAABMAAsACAAMAAUAAABMAAwACAAMAAYAAAA0AAsABwADAAUAAAA=")
+tile_set = ExtResource("6_076ep")
+
+[node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_v3mdc")]
+position = Vector2(16, 174)
+
+[node name="Camera" parent="." unique_id=1869048338 instance=ExtResource("7_7r1d5")]
+limit_right = 860
+
+[node name="level_end" parent="." unique_id=2023605445 instance=ExtResource("8_g8n0t")]
+position = Vector2(863, 73)
+next_level = "jogo"
+
+[node name="CollisionShape2D" parent="level_end" index="0" unique_id=1663134461]
+position = Vector2(10, 24)
+shape = SubResource("RectangleShape2D_g8n0t")
+
+[editable path="level_end"]
