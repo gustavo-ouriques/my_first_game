@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bfr36irsjwrao"]
+
+[ext_resource type="Texture2D" uid="uid://vnmiag6v0215" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="1_8p5me"]
+[ext_resource type="Script" uid="uid://cklxjmyg3fkxn" path="res://scripts/broken_block.gd" id="1_52mbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4q65j"]
+size = Vector2(22, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52mbo"]
+atlas = ExtResource("1_8p5me")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arcl3"]
+atlas = ExtResource("1_8p5me")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtdsp"]
+atlas = ExtResource("1_8p5me")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4q65j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52mbo")
+}],
+"loop": 1,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arcl3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtdsp")
+}],
+"loop": 1,
+"name": &"fallen",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q55g"]
+size = Vector2(22, 2)
+
+[node name="BrokenBlock" type="StaticBody2D" unique_id=2084390449]
+collision_mask = 2
+script = ExtResource("1_52mbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=284178353]
+position = Vector2(50, 56)
+shape = SubResource("RectangleShape2D_4q65j")
+one_way_collision = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1159759973]
+position = Vector2(49.999996, 56)
+scale = Vector2(1.3125004, 1.1874998)
+sprite_frames = SubResource("SpriteFrames_4q65j")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1107946502]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=845404560]
+position = Vector2(50, 45)
+shape = SubResource("RectangleShape2D_6q55g")
+debug_color = Color(0.8717972, 0.28787535, 0.5130211, 0.41960785)
+
+[node name="BrokenTimer" type="Timer" parent="." unique_id=156776084]
+one_shot = true
+
+[node name="ResetTimer" type="Timer" parent="." unique_id=285016927]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="BrokenTimer" to="." method="_on_broken_timer_timeout"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
