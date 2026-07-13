@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://k4bwmya1fbqx" path="res://sprites/Sprite Pack 6/Sprite Pack 6/3 - Skeleton/Spinning_Bone (16 x 16).png" id="1_ei8n1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4q65j"]
-radius = 6.0
+radius = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1r5u"]
 atlas = ExtResource("1_ei8n1")
@@ -53,7 +53,8 @@ shape = SubResource("CircleShape2D_4q65j")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=853336592]
 sprite_frames = SubResource("SpriteFrames_6q55g")
 autoplay = "default"
-frame_progress = 0.31146458
+frame_progress = 0.93710756
+speed_scale = 2.5
 
 [node name="SelfDestructTimer" type="Timer" parent="." unique_id=2014176481]
 wait_time = 3.0
