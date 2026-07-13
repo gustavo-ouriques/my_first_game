@@ -180,6 +180,11 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		if status != PlayerState.dead:
 			go_to_dead_state()
 			
-			
+func hit_enemy():
+	pass
+	
+func hit_lethal_area():
+	pass
+	
 func _on_reload_timer_timeout() -> void:
 	get_tree().reload_current_scene()
