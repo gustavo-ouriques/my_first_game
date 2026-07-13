@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MyFirstGame"
-run/main_scene="uid://dq2j8urxbnqkp"
+run/main_scene="uid://blnayc0dmq4is"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

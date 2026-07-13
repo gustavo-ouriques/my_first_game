@@ -11,6 +11,8 @@ enum PlayerState{
 
 @onready var animated: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var reload_timer: Timer = $ReloadTimer
+
 
 const SPEED = 80.0
 const JUMP_VELOCITY = -300.0
@@ -79,6 +81,7 @@ func go_to_dead_state():
 	status = PlayerState.dead
 	animated.play("dead")
 	velocity = Vector2.ZERO
+	reload_timer.start()
 	
 	
 func idle_state():
@@ -174,4 +177,9 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		go_to_jump_state()
 	else:
 		#player morre
-		go_to_dead_state()
+		if status != PlayerState.dead:
+			go_to_dead_state()
+			
+			
+func _on_reload_timer_timeout() -> void:
+	get_tree().reload_current_scene()

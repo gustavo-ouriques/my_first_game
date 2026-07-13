@@ -2,7 +2,28 @@
 
 [ext_resource type="Script" uid="uid://d0obpuu8o688y" path="res://scripts/esqueleto.gd" id="1_74aq7"]
 [ext_resource type="Texture2D" uid="uid://cnhifp4rd7324" path="res://sprites/Sprite Pack 6/Sprite Pack 6/3 - Skeleton/Crumbling_Into_Bone_Pile (32 x 32).png" id="2_2b5j2"]
+[ext_resource type="Texture2D" uid="uid://dnt8udyhrcbr0" path="res://sprites/Sprite Pack 6/Sprite Pack 6/3 - Skeleton/Bone_Toss (32 x 32).png" id="2_gkp0j"]
 [ext_resource type="Texture2D" uid="uid://dgfrkrj13vx8h" path="res://sprites/Sprite Pack 6/Sprite Pack 6/3 - Skeleton/Limping_Movement (32 x 32).png" id="3_gkp0j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d88cy"]
+atlas = ExtResource("2_gkp0j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjwx5"]
+atlas = ExtResource("2_gkp0j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enn3h"]
+atlas = ExtResource("2_gkp0j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pqa7"]
+atlas = ExtResource("2_gkp0j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dclnp"]
+atlas = ExtResource("2_gkp0j")
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hllf2"]
 atlas = ExtResource("2_2b5j2")
@@ -58,6 +79,26 @@ region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6q55g"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d88cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjwx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enn3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pqa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dclnp")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hllf2")
@@ -123,13 +164,17 @@ script = ExtResource("1_74aq7")
 position = Vector2(2.4999995, -6)
 scale = Vector2(1.15625, 1.375)
 sprite_frames = SubResource("SpriteFrames_6q55g")
-animation = &"dead"
+animation = &"attack"
+frame = 2
+frame_progress = 0.65643966
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819369295]
 position = Vector2(4, -2)
 shape = SubResource("CapsuleShape2D_4q65j")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=177678909]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1046864013]
 position = Vector2(5, -1.5)
@@ -143,3 +188,13 @@ target_position = Vector2(22, 0)
 [node name="GroundDetector" type="RayCast2D" parent="." unique_id=18037618]
 position = Vector2(14, 0)
 target_position = Vector2(0, 21)
+
+[node name="PlayerDetector" type="RayCast2D" parent="." unique_id=1019955208]
+position = Vector2(0, 12)
+target_position = Vector2(46, 0)
+collision_mask = 2
+
+[node name="BoneStartPosition" type="Node2D" parent="." unique_id=896546521]
+position = Vector2(18, -4)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -63,7 +63,7 @@ tile_set = ExtResource("6_076ep")
 
 [node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_v3mdc")]
 position = Vector2(11, 142)
-max_jump_count = 1
+max_jump_count = 3
 
 [node name="Camera" parent="." unique_id=1869048338 instance=ExtResource("7_7r1d5")]
 limit_right = 860
