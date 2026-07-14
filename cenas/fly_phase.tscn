@@ -1,0 +1,42 @@
+[gd_scene format=4 uid="uid://gg2ubbo13tox"]
+
+[ext_resource type="PackedScene" uid="uid://wpwxcgdhrchl" path="res://entidades/player.tscn" id="1_m15rb"]
+[ext_resource type="PackedScene" uid="uid://ch0f63oaedvyr" path="res://entidades/camera.tscn" id="2_ahihv"]
+[ext_resource type="TileSet" uid="uid://7aid6gw03ncp" path="res://tiles/terreno.tres" id="3_0dkgc"]
+[ext_resource type="TileSet" uid="uid://tj8xij5xfva4" path="res://tiles/decoracao.tres" id="4_rub6f"]
+[ext_resource type="TileSet" uid="uid://hcls48tjuvu7" path="res://tiles/lava.tres" id="5_jvcnm"]
+[ext_resource type="PackedScene" uid="uid://bhxbi22ds2fh" path="res://entidades/coruja.tscn" id="6_rub6f"]
+
+[node name="FlyPhase" type="Node2D" unique_id=1814808895]
+metadata/_edit_vertical_guides_ = [284.0]
+metadata/_edit_horizontal_guides_ = [-128.0, -48.0]
+
+[node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_m15rb")]
+position = Vector2(15, 172)
+max_jump_count = 1000
+
+[node name="Camera" parent="." unique_id=1869048338 instance=ExtResource("2_ahihv")]
+limit_top = -48
+
+[node name="Tiles" type="Node2D" parent="." unique_id=827378468]
+
+[node name="Terreno" type="TileMapLayer" parent="Tiles" unique_id=441424550]
+tile_map_data = PackedByteArray("AAAAAAwAAQAGAAMAAAABAAwAAQAGAAMAAAACAAwAAQAGAAMAAAADAAwAAQAGAAMAAAAEAAwAAQAGAAMAAAAFAAwAAQAGAAMAAAAGAAwAAQAGAAMAAAAHAAwAAQAGAAMAAAAIAAwAAQAGAAMAAAAJAAwAAQAGAAMAAAAKAAwAAQAGAAMAAAA=")
+tile_set = ExtResource("3_0dkgc")
+
+[node name="Decoracao" type="TileMapLayer" parent="Tiles" unique_id=1211815109]
+tile_set = ExtResource("4_rub6f")
+
+[node name="Lava" type="TileMapLayer" parent="Tiles" unique_id=211151449 groups=["LethalArea"]]
+position = Vector2(96, 15)
+tile_map_data = PackedByteArray("AAAFAAsAAgADAAAAAAAGAAsAAgAEAAAAAAAHAAsAAgAFAAAAAAAIAAsAAgADAAAAAAAJAAsAAgAEAAAAAAAKAAsAAgAFAAAAAAALAAsAAgADAAAAAAAMAAsAAgAEAAAAAAANAAsAAgAFAAAAAAAOAAsAAgADAAAAAAAPAAsAAgAEAAAAAAAQAAsAAgAFAAAAAAARAAsAAgADAAAAAAASAAsAAgAEAAAAAAATAAsAAgAFAAAAAAD6//z/AgAEAAMAAAD7//z/AgAEAAMAAAD8//z/AgAEAAMAAAD9//z/AgAEAAMAAAD+//z/AgAEAAMAAAD///z/AgAEAAMAAAAAAPz/AgAEAAMAAAABAPz/AgAEAAMAAAACAPz/AgAEAAMAAAADAPz/AgAEAAMAAAAEAPz/AgAEAAMAAAAFAPz/AgAEAAMAAAAGAPz/AgAEAAMAAAAHAPz/AgAEAAMAAAAIAPz/AgAEAAMAAAAJAPz/AgAEAAMAAAAKAPz/AgAEAAMAAAALAPz/AgAEAAMAAAAMAPz/AgAEAAMAAAANAPz/AgAEAAMAAAAOAPz/AgAEAAMAAAAPAPz/AgAEAAMAAAAQAPz/AgAEAAMAAAARAPz/AgAEAAMAAAASAPz/AgAEAAMAAAA=")
+tile_set = ExtResource("5_jvcnm")
+
+[node name="Coruja" parent="Tiles" unique_id=1462751329 instance=ExtResource("6_rub6f")]
+position = Vector2(19, 126)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1805458337]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2043324946]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1789615708]

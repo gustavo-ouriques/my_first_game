@@ -172,7 +172,7 @@ z_index = 1
 position = Vector2(0.49999762, 3.5)
 scale = Vector2(0.9687501, 0.96874994)
 sprite_frames = SubResource("SpriteFrames_6q55g")
-animation = &"duck"
+animation = &"idle"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=884544755]
 collision_layer = 2
