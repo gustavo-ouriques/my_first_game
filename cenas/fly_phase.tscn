@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://7aid6gw03ncp" path="res://tiles/terreno.tres" id="3_0dkgc"]
 [ext_resource type="TileSet" uid="uid://tj8xij5xfva4" path="res://tiles/decoracao.tres" id="4_rub6f"]
 [ext_resource type="TileSet" uid="uid://hcls48tjuvu7" path="res://tiles/lava.tres" id="5_jvcnm"]
-[ext_resource type="PackedScene" uid="uid://bhxbi22ds2fh" path="res://entidades/coruja.tscn" id="6_rub6f"]
+[ext_resource type="PackedScene" uid="uid://bhxbi22ds2fh" path="res://entidades/passaro.tscn" id="6_rub6f"]
 
 [node name="FlyPhase" type="Node2D" unique_id=1814808895]
 metadata/_edit_vertical_guides_ = [284.0]
@@ -32,11 +32,11 @@ position = Vector2(96, 15)
 tile_map_data = PackedByteArray("AAAFAAsAAgADAAAAAAAGAAsAAgAEAAAAAAAHAAsAAgAFAAAAAAAIAAsAAgADAAAAAAAJAAsAAgAEAAAAAAAKAAsAAgAFAAAAAAALAAsAAgADAAAAAAAMAAsAAgAEAAAAAAANAAsAAgAFAAAAAAAOAAsAAgADAAAAAAAPAAsAAgAEAAAAAAAQAAsAAgAFAAAAAAARAAsAAgADAAAAAAASAAsAAgAEAAAAAAATAAsAAgAFAAAAAAD6//z/AgAEAAMAAAD7//z/AgAEAAMAAAD8//z/AgAEAAMAAAD9//z/AgAEAAMAAAD+//z/AgAEAAMAAAD///z/AgAEAAMAAAAAAPz/AgAEAAMAAAABAPz/AgAEAAMAAAACAPz/AgAEAAMAAAADAPz/AgAEAAMAAAAEAPz/AgAEAAMAAAAFAPz/AgAEAAMAAAAGAPz/AgAEAAMAAAAHAPz/AgAEAAMAAAAIAPz/AgAEAAMAAAAJAPz/AgAEAAMAAAAKAPz/AgAEAAMAAAALAPz/AgAEAAMAAAAMAPz/AgAEAAMAAAANAPz/AgAEAAMAAAAOAPz/AgAEAAMAAAAPAPz/AgAEAAMAAAAQAPz/AgAEAAMAAAARAPz/AgAEAAMAAAASAPz/AgAEAAMAAAA=")
 tile_set = ExtResource("5_jvcnm")
 
-[node name="Coruja" parent="Tiles" unique_id=1462751329 instance=ExtResource("6_rub6f")]
-position = Vector2(19, 126)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1805458337]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2043324946]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1789615708]
+
+[node name="Passaro" parent="." unique_id=1462751329 instance=ExtResource("6_rub6f")]
+position = Vector2(37, 132)

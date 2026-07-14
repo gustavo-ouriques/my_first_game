@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cm5f84lwk120c" path="res://sprites/Sprite Pack 4/Sprite Pack 4/7 - Orchid_Owl_Flying (32 x 32).png" id="1_5mipt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4q65j"]
-radius = 9.0
-height = 22.0
+radius = 8.0
+height = 16.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xkm3o"]
 atlas = ExtResource("1_5mipt")
@@ -35,7 +35,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Coruja" type="CharacterBody2D" unique_id=1462751329 groups=["enemies"]]
+[node name="Passaro" type="CharacterBody2D" unique_id=1462751329 groups=["enemies"]]
 collision_layer = 4
 collision_mask = 2
 
@@ -44,8 +44,8 @@ position = Vector2(80, 45)
 shape = SubResource("CapsuleShape2D_4q65j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=564973282]
-position = Vector2(80, 46)
-scale = Vector2(1.3125001, 1.28125)
+position = Vector2(80.00001, 45)
+scale = Vector2(1.03125, 1.0703124)
 sprite_frames = SubResource("SpriteFrames_4q65j")
 animation = &"Flying"
 autoplay = "Flying"
