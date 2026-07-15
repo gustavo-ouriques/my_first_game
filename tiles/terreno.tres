@@ -200,8 +200,11 @@ texture = ExtResource("2_310bl")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxbgs"]
 texture = ExtResource("3_310bl")
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.057598, 8, 2.8777409, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.057598, 8, 2.8777409, 8, 8, -8, 8)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.057598, 8, 2.8777409, 8, 8, -8, 8)
 4:1/0 = 0
 3:2/0 = 0
 5:2/0 = 0

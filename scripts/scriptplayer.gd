@@ -15,7 +15,7 @@ enum PlayerState{
 @onready var reload_timer: Timer = $ReloadTimer
 
 
-const SPEED = 80.0
+const SPEED = 90.0
 const JUMP_VELOCITY = -300.0
 
 var jump_count = 0
@@ -79,12 +79,12 @@ func go_to_duck_state():
 	
 func exit_from_duck_state():
 	collision_shape.shape.size.x = 20
-	collision_shape.shape.size.y = 26
-	collision_shape.position.y = 3
+	collision_shape.shape.size.y = 27
+	collision_shape.position.y = 5.5
 	
 	hitbox_collision_shape.shape.size.x = 20
-	hitbox_collision_shape.shape.size.y = 28
-	hitbox_collision_shape.position.y = 5
+	hitbox_collision_shape.shape.size.y = 27
+	hitbox_collision_shape.position.y = 5.5
 	
 func go_to_dead_state():
 	if status == PlayerState.dead:
