@@ -1,58 +1,93 @@
 [gd_scene format=3 uid="uid://53t1x51dsf3o"]
 
+[ext_resource type="Script" uid="uid://c5thsakent1ld" path="res://scripts/title_screen.gd" id="1_88gnj"]
 [ext_resource type="Texture2D" uid="uid://dbm5hejkbcvbj" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png" id="1_lxdol"]
-[ext_resource type="Texture2D" uid="uid://c1nhgabev53pl" path="res://sprites/Sprite Pack 3/4 - Tommy/Victory_Pose (32 x 32).png" id="2_1hn3b"]
+[ext_resource type="Theme" uid="uid://7sssbn06fou1" path="res://menu/button.tres" id="2_o0rbc"]
+[ext_resource type="Texture2D" uid="uid://c1nhgabev53pl" path="res://sprites/Sprite Pack 3/4 - Tommy/Victory_Pose (32 x 32).png" id="3_o0rbc"]
+[ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="3_vio6n"]
 
-[node name="TitleScreen" type="Control" unique_id=144932709]
+[node name="TitleScreen" type="Control" unique_id=2142045993]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
+script = ExtResource("1_88gnj")
+metadata/_edit_vertical_guides_ = [288.0]
 
-[node name="bg" type="TextureRect" parent="." unique_id=1556302718]
+[node name="BG" type="TextureRect" parent="." unique_id=712667496]
 layout_mode = 0
-offset_right = 288.0
+offset_right = 398.0
 offset_bottom = 208.0
 texture = ExtResource("1_lxdol")
-expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2146144214]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=798657859]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=565261182]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=381269761]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2127319151]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1871130091]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=465090153]
+[node name="GameLogo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1597617934]
 layout_mode = 2
+expand_mode = 5
 
-[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=930636380]
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=15554102]
 layout_mode = 2
+theme = ExtResource("2_o0rbc")
 text = "START"
 
-[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=5852780]
+[node name="Credits_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1698755867]
 layout_mode = 2
-text = "CREDITOS"
+theme = ExtResource("2_o0rbc")
+text = "CREDITS"
 
-[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=782819198]
+[node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1333265365]
 layout_mode = 2
+theme = ExtResource("2_o0rbc")
 text = "QUIT GAME"
 
-[node name="mochi" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1111662240]
+[node name="mochi" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1358898666]
 layout_mode = 2
-texture = ExtResource("2_1hn3b")
+texture = ExtResource("3_o0rbc")
 expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=2062681433]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 57.0
+offset_right = -97.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9922275, 0.9129345, 0.8650028, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9647059)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_vio6n")
+theme_override_font_sizes/font_size = 16
+text = "Indo ali Adventures
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]

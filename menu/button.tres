@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://7sssbn06fou1"]
+
+[ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="1_qhff4"]
+
+[resource]
+Button/colors/font_color = Color(0.924823, 0.8828772, 0.84273005, 1)
+Button/fonts/font = ExtResource("1_qhff4")

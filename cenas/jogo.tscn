@@ -42,10 +42,10 @@ position = Vector2(790, 289)
 position = Vector2(1497, -591)
 
 [node name="Camera" parent="." unique_id=1869048338 instance=ExtResource("4_bkotw")]
-limit_left = 18
-limit_top = -10000023
+limit_left = 1
+limit_top = -10000017
 limit_right = 2543
-limit_bottom = 477
+limit_bottom = 483
 
 [node name="level_end" parent="." unique_id=2023605445 instance=ExtResource("5_dmxwg")]
 position = Vector2(1194, 264)
