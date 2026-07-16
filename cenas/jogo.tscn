@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://enatjmgrf1eb" path="res://entidades/moving_plataform.tscn" id="6_dtkcs"]
 [ext_resource type="PackedScene" uid="uid://bfr36irsjwrao" path="res://entidades/broken_block.tscn" id="9_c77ad"]
 [ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="10_s5cfb"]
+[ext_resource type="AudioStream" uid="uid://vs50ckihl7oe" path="res://sounds/sunsetplanet__8bittownthemesong.wav" id="11_kfigh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxwg"]
 size = Vector2(60, 707.75)
@@ -19,7 +20,7 @@ metadata/_edit_vertical_guides_ = [2526.0]
 metadata/_edit_horizontal_guides_ = [506.0]
 
 [node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_k46e6")]
-position = Vector2(711, 223)
+position = Vector2(12, 158)
 max_jump_count = 1
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1202528388]
@@ -115,6 +116,11 @@ position = Vector2(238, -31)
 position = Vector2(-32, 45)
 
 [node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("10_s5cfb")]
+
+[node name="background_music" type="AudioStreamPlayer" parent="." unique_id=1313652660]
+stream = ExtResource("11_kfigh")
+volume_db = -10.0
+autoplay = true
 
 [editable path="level_end"]
 [editable path="MovingPlataform"]
