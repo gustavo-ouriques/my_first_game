@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dx18y4vs5krsn" path="res://entidades/esqueleto.tscn" id="5_v6mw0"]
 [ext_resource type="PackedScene" uid="uid://enatjmgrf1eb" path="res://entidades/moving_plataform.tscn" id="6_dtkcs"]
 [ext_resource type="PackedScene" uid="uid://bfr36irsjwrao" path="res://entidades/broken_block.tscn" id="9_c77ad"]
+[ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="10_s5cfb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxwg"]
 size = Vector2(60, 707.75)
@@ -18,7 +19,7 @@ metadata/_edit_vertical_guides_ = [2526.0]
 metadata/_edit_horizontal_guides_ = [506.0]
 
 [node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_k46e6")]
-position = Vector2(14, 157)
+position = Vector2(711, 223)
 max_jump_count = 1
 
 [node name="Tiles" type="Node2D" parent="." unique_id=1202528388]
@@ -112,6 +113,8 @@ position = Vector2(238, -31)
 
 [node name="CollisionShape2D" parent="MovingPlataform4" index="2" unique_id=962892173]
 position = Vector2(-32, 45)
+
+[node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("10_s5cfb")]
 
 [editable path="level_end"]
 [editable path="MovingPlataform"]

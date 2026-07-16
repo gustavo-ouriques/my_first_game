@@ -93,7 +93,9 @@ func go_to_dead_state():
 	status = PlayerState.dead
 	animated.play("dead")
 	velocity.x = 0
-	reload_timer.start()
+	#reload_timer.start() // nao preciso mais
+	await animated.animation_finished # novo
+	get_tree().change_scene_to_file("res://menu/game_over.tscn") #novo
 	
 func idle_state():
 	move()

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dx18y4vs5krsn" path="res://entidades/esqueleto.tscn" id="9_eagp0"]
 [ext_resource type="PackedScene" uid="uid://enatjmgrf1eb" path="res://entidades/moving_plataform.tscn" id="11_1vuwj"]
 [ext_resource type="PackedScene" uid="uid://bfr36irsjwrao" path="res://entidades/broken_block.tscn" id="12_8c8og"]
+[ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="13_6rqp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8n0t"]
 size = Vector2(40, 184)
@@ -146,6 +147,8 @@ position = Vector2(1161, 44)
 
 [node name="BrokenBlock7" parent="." unique_id=806369168 instance=ExtResource("12_8c8og")]
 position = Vector2(1213, 16)
+
+[node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("13_6rqp3")]
 
 [editable path="level_end"]
 [editable path="MovingPlataform"]
