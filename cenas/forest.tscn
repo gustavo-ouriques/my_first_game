@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bfr36irsjwrao" path="res://entidades/broken_block.tscn" id="12_8c8og"]
 [ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="13_6rqp3"]
 [ext_resource type="AudioStream" uid="uid://vs50ckihl7oe" path="res://sounds/sunsetplanet__8bittownthemesong.wav" id="14_ggmmb"]
+[ext_resource type="PackedScene" uid="uid://tlwnylukyxmf" path="res://menu/phase_counter.tscn" id="15_yofw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8n0t"]
 size = Vector2(40, 104)
@@ -172,6 +173,9 @@ visible = false
 stream = ExtResource("14_ggmmb")
 volume_db = -10.0
 autoplay = true
+
+[node name="phase_counter" parent="." unique_id=575150972 instance=ExtResource("15_yofw3")]
+phase_text = "fase 1"
 
 [editable path="level_end"]
 [editable path="MovingPlataform"]

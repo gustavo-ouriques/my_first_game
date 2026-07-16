@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://tlwnylukyxmf"]
+
+[ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="1_0fbq5"]
+[ext_resource type="Script" uid="uid://bqx32x8qqqsdl" path="res://scripts/phase_counter.gd" id="2_70j3w"]
+
+[node name="phase_counter" type="CanvasLayer" unique_id=575150972]
+script = ExtResource("2_70j3w")
+
+[node name="control" type="Control" parent="." unique_id=1750581897]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="container" type="MarginContainer" parent="control" unique_id=788286839]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="control/container" unique_id=1975915784]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="control/container" unique_id=1340735488]
+layout_mode = 2
+
+[node name="counter" type="Label" parent="control/container/VBoxContainer" unique_id=1505571210]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.9536877, 0.78801465, 0.22721985, 1)
+theme_override_colors/font_shadow_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("1_0fbq5")
+theme_override_font_sizes/font_size = 5
+text = "Fase 1"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -201,9 +201,12 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		go_to_dead_state()
 			
 func hit_enemy(area: Area2D):
-	if velocity.y > 0:
+	var enemy = area.get_parent()
+	var is_above = global_position.y < enemy.global_position.y - 4 # margem, que devo ajustar conforme o tamanho do sprite
+	
+	if velocity.y > 0 and is_above:
 		# inimigo morre
-		area.get_parent().take_damage()
+		enemy.take_damage()
 		go_to_jump_state()
 	else:
 		#player morre
