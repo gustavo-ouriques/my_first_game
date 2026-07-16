@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://enatjmgrf1eb" path="res://entidades/moving_plataform.tscn" id="11_1vuwj"]
 [ext_resource type="PackedScene" uid="uid://bfr36irsjwrao" path="res://entidades/broken_block.tscn" id="12_8c8og"]
 [ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="13_6rqp3"]
+[ext_resource type="AudioStream" uid="uid://vs50ckihl7oe" path="res://sounds/sunsetplanet__8bittownthemesong.wav" id="14_ggmmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8n0t"]
 size = Vector2(40, 184)
@@ -149,6 +150,11 @@ position = Vector2(1161, 44)
 position = Vector2(1213, 16)
 
 [node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("13_6rqp3")]
+
+[node name="background_musica" type="AudioStreamPlayer" parent="." unique_id=2088304522]
+stream = ExtResource("14_ggmmb")
+volume_db = -10.0
+autoplay = true
 
 [editable path="level_end"]
 [editable path="MovingPlataform"]

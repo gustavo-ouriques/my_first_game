@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bhjkp5yf5ysru" path="res://sprites/Sprite Pack 3/4 - Tommy/Falling_Poses (32 x 32).png" id="3_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://ddc5rt34bc4u7" path="res://sprites/Sprite Pack 3/4 - Tommy/Jumping (32 x 32).png" id="3_opfg8"]
 [ext_resource type="Texture2D" uid="uid://q5twvilb6k7t" path="res://sprites/Sprite Pack 3/4 - Tommy/Walking (32 x 32).png" id="4_2qu0p"]
+[ext_resource type="AudioStream" uid="uid://dhbsb7fnh3wmq" path="res://sounds/jump_sound.ogg" id="8_r4ns2"]
+[ext_resource type="AudioStream" uid="uid://b6p8wguy4ap3m" path="res://sounds/death__8-bit-death-sound.wav" id="9_s8mye"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qu0p"]
 size = Vector2(20, 26)
@@ -186,6 +188,14 @@ debug_color = Color(0.9206592, 0.10409529, 0.6418027, 0.41960785)
 [node name="ReloadTimer" type="Timer" parent="." unique_id=925188426]
 wait_time = 1.5
 one_shot = true
+
+[node name="Jump_sound" type="AudioStreamPlayer" parent="." unique_id=1344502172]
+stream = ExtResource("8_r4ns2")
+volume_db = -25.0
+
+[node name="Death_sound" type="AudioStreamPlayer" parent="." unique_id=1638460441]
+stream = ExtResource("9_s8mye")
+volume_db = -20.0
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

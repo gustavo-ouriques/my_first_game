@@ -13,6 +13,8 @@ enum PlayerState{
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var hitbox_collision_shape: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var reload_timer: Timer = $ReloadTimer
+@onready var jump_sound: AudioStreamPlayer = $Jump_sound as AudioStreamPlayer
+@onready var death_sound: AudioStreamPlayer = $Death_sound as AudioStreamPlayer
 
 
 const SPEED = 90.0
@@ -40,8 +42,8 @@ func _physics_process(delta: float) -> void:
 			jump_state()
 		PlayerState.fall:
 			fall_state()
-		PlayerState.duck:
-			duck_state()
+#		PlayerState.duck:
+#			duck_state()
 		PlayerState.dead:
 			dead_state()
 		
@@ -59,6 +61,7 @@ func go_to_walk_state():
 func go_to_jump_state():
 	status = PlayerState.jump
 	animated.play("jump")
+	jump_sound.play() #som de pulo
 	velocity.y = JUMP_VELOCITY
 	jump_count += 1
 	
@@ -66,25 +69,25 @@ func go_to_fall_state():
 	status = PlayerState.fall
 	animated.play("fall")
 	
-func go_to_duck_state():
-	status = PlayerState.duck
-	animated.play("duck")
-	collision_shape.shape.size.x = 29
-	collision_shape.shape.size.y = 13
-	collision_shape.position.y = 10
+#func go_to_duck_state():
+#	status = PlayerState.duck
+#	animated.play("duck")
+#	collision_shape.shape.size.x = 29
+#	collision_shape.shape.size.y = 13
+#	collision_shape.position.y = 10
 	
-	hitbox_collision_shape.shape.size.x = 20
-	hitbox_collision_shape.shape.size.y = 14
-	hitbox_collision_shape.position.y = 12
+#	hitbox_collision_shape.shape.size.x = 20
+#	hitbox_collision_shape.shape.size.y = 14
+#	hitbox_collision_shape.position.y = 12
 	
-func exit_from_duck_state():
-	collision_shape.shape.size.x = 20
-	collision_shape.shape.size.y = 27
-	collision_shape.position.y = 5.5
+#func exit_from_duck_state():
+#	collision_shape.shape.size.x = 20
+#	collision_shape.shape.size.y = 27
+#	collision_shape.position.y = 5.5
 	
-	hitbox_collision_shape.shape.size.x = 20
-	hitbox_collision_shape.shape.size.y = 27
-	hitbox_collision_shape.position.y = 5.5
+#	hitbox_collision_shape.shape.size.x = 20
+#	hitbox_collision_shape.shape.size.y = 27
+#	hitbox_collision_shape.position.y = 5.5
 	
 func go_to_dead_state():
 	if status == PlayerState.dead:
@@ -92,6 +95,7 @@ func go_to_dead_state():
 	
 	status = PlayerState.dead
 	animated.play("dead")
+	death_sound.play()
 	velocity.x = 0
 	GameManager.last_scene_path = get_tree().current_scene.scene_file_path #para carregar a ultima fase
 	#reload_timer.start() // nao preciso mais
@@ -105,9 +109,9 @@ func idle_state():
 		go_to_jump_state()
 		return
 	
-	if Input.is_action_pressed("duck"):
-		go_to_duck_state()
-		return
+#	if Input.is_action_pressed("duck"):
+#		go_to_duck_state()
+#		return
 		
 	if velocity.x != 0:
 		go_to_walk_state()
@@ -152,12 +156,12 @@ func fall_state():
 			go_to_walk_state()
 		return
 		
-func duck_state():
-	uptade_direction()
-	if Input.is_action_just_released("duck"):
-		exit_from_duck_state()
-		go_to_idle_state()
-		return
+#func duck_state():
+#	uptade_direction()
+#	if Input.is_action_just_released("duck"):
+#		exit_from_duck_state()
+#		go_to_idle_state()
+#		return
 		
 func dead_state():
 	pass
