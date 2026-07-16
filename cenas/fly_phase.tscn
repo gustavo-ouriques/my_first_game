@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bhxbi22ds2fh" path="res://entidades/passaro.tscn" id="6_rub6f"]
 [ext_resource type="PackedScene" uid="uid://blx23ovpivj8a" path="res://entidades/level_end.tscn" id="7_jvcnm"]
 [ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="9_q0sie"]
+[ext_resource type="PackedScene" uid="uid://dgh4p7xq7l07b" path="res://entidades/victory_level_end.tscn" id="10_cv160"]
 [ext_resource type="AudioStream" uid="uid://bu35ypp46f07r" path="res://sounds/making-up-soft-hip-hop.mp3" id="10_u7hk3"]
 
 [node name="FlyPhase" type="Node2D" unique_id=1814808895]
@@ -15,7 +16,7 @@ metadata/_edit_vertical_guides_ = [284.0]
 metadata/_edit_horizontal_guides_ = [-128.0, -48.0]
 
 [node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_m15rb")]
-position = Vector2(1017, -1060)
+position = Vector2(21, 174)
 max_jump_count = 1000
 
 [node name="Camera" parent="." unique_id=1869048338 instance=ExtResource("2_ahihv")]
@@ -56,12 +57,15 @@ next_level = "vitoria"
 game_win = "vitoria"
 
 [node name="CollisionShape2D" parent="level_end" index="0" unique_id=1663134461]
-position = Vector2(282.0564, -919.0193)
+position = Vector2(2346.0564, -192.01926)
 
 [node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("9_q0sie")]
 
 [node name="background_music" type="AudioStreamPlayer" parent="." unique_id=1341457205]
 stream = ExtResource("10_u7hk3")
 autoplay = true
+
+[node name="victory_level_end" parent="." unique_id=473344277 instance=ExtResource("10_cv160")]
+position = Vector2(1064, -1200)
 
 [editable path="level_end"]

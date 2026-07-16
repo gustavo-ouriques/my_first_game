@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://7sssbn06fou1" path="res://menu/button.tres" id="1_cpjwb"]
 [ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="1_ryjqb"]
+[ext_resource type="Script" uid="uid://b30e0b52x5eig" path="res://scripts/vitoria.gd" id="1_scnxm"]
+[ext_resource type="AudioStream" uid="uid://c46r8mna7atld" path="res://sounds/you won.wav" id="4_lp6nj"]
 
 [node name="vitoria" type="Control" unique_id=1883921583]
 layout_mode = 3
@@ -10,18 +12,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_scnxm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=227850849]
 layout_mode = 0
 offset_right = 391.0
 offset_bottom = 232.0
-color = Color(0.2374042, 0.7024685, 0.96598333, 1)
+color = Color(0.65425307, 0.6684427, 0.5891032, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1181076856]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 75.0
-offset_right = 232.0
+offset_right = 280.0
 offset_bottom = 141.0
 
 [node name="restart_button" type="Button" parent="VBoxContainer" unique_id=1289268263]
@@ -37,10 +40,10 @@ text = "FECHAR JOGO"
 [node name="Label" type="Label" parent="." unique_id=1111322650]
 modulate = Color(0.92258924, 0.80874604, 0.19263434, 1)
 layout_mode = 0
-offset_left = 103.0
-offset_top = 44.0
-offset_right = 227.0
-offset_bottom = 67.0
+offset_left = 129.0
+offset_top = 43.0
+offset_right = 253.0
+offset_bottom = 66.0
 theme_override_fonts/font = ExtResource("1_ryjqb")
 text = "VOCÊ VENCEU!"
 horizontal_alignment = 1
@@ -50,3 +53,10 @@ vertical_alignment = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=743651296]
+stream = ExtResource("4_lp6nj")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
