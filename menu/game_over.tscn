@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c5nyf8yoims80"]
+
+[ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="1_641x1"]
+[ext_resource type="Script" uid="uid://df5tpj4rfpf7p" path="res://scripts/game_over.gd" id="1_rkkr6"]
+
+[node name="GameOver" type="Control" unique_id=394899330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rkkr6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1337193102]
+layout_mode = 0
+offset_right = 433.0
+offset_bottom = 239.0
+color = Color(0.00043114187, 0.002500961, 0.0011160753, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1003405627]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 65.0
+offset_right = 230.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0.9475189, 0.9653918, 0.77278787, 1)
+theme_override_colors/font_shadow_color = Color(0.0056611504, 0.0056611514, 0.00566115, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("1_641x1")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1867498014]
+layout_mode = 0
+offset_left = 136.00002
+offset_top = 89.0
+offset_right = 266.0
+offset_bottom = 155.0
+scale = Vector2(0.7006149, 0.72905976)
+
+[node name="restart_button" type="Button" parent="VBoxContainer" unique_id=1163461684]
+layout_mode = 2
+text = "REINICIAR FASE"
+
+[node name="quit_button" type="Button" parent="VBoxContainer" unique_id=1631956423]
+layout_mode = 2
+text = "FECHAR JOGO"
+
+[connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

@@ -18,7 +18,7 @@ metadata/_edit_vertical_guides_ = [288.0]
 
 [node name="BG" type="TextureRect" parent="." unique_id=712667496]
 layout_mode = 0
-offset_right = 398.0
+offset_right = 406.0
 offset_bottom = 208.0
 texture = ExtResource("1_lxdol")
 
@@ -50,17 +50,17 @@ expand_mode = 5
 [node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=15554102]
 layout_mode = 2
 theme = ExtResource("2_o0rbc")
-text = "START"
+text = "INICIAR"
 
 [node name="Credits_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1698755867]
 layout_mode = 2
 theme = ExtResource("2_o0rbc")
-text = "CREDITS"
+text = "CREDITOS"
 
 [node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1333265365]
 layout_mode = 2
 theme = ExtResource("2_o0rbc")
-text = "QUIT GAME"
+text = "FECHAR JOGO"
 
 [node name="mochi" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1358898666]
 layout_mode = 2

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dx18y4vs5krsn" path="res://entidades/esqueleto.tscn" id="6_nc0xl"]
 [ext_resource type="PackedScene" uid="uid://bhxbi22ds2fh" path="res://entidades/passaro.tscn" id="6_rub6f"]
 [ext_resource type="PackedScene" uid="uid://blx23ovpivj8a" path="res://entidades/level_end.tscn" id="7_jvcnm"]
+[ext_resource type="PackedScene" uid="uid://bevm3wehxjx7m" path="res://menu/pause_menu.tscn" id="9_q0sie"]
 
 [node name="FlyPhase" type="Node2D" unique_id=1814808895]
 metadata/_edit_vertical_guides_ = [284.0]
@@ -57,5 +58,7 @@ position = Vector2(782.9436, -185.98074)
 
 [node name="CollisionShape2D" parent="level_end" index="0" unique_id=1663134461]
 position = Vector2(435.0564, -403.01926)
+
+[node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("9_q0sie")]
 
 [editable path="level_end"]
