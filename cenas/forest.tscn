@@ -158,13 +158,13 @@ position = Vector2(1409, 31)
 position = Vector2(1364, 3)
 
 [node name="BrokenBlock11" parent="." unique_id=591535273 instance=ExtResource("12_8c8og")]
-position = Vector2(2144, 51)
+position = Vector2(2142, 42)
 
 [node name="BrokenBlock12" parent="." unique_id=931271678 instance=ExtResource("12_8c8og")]
-position = Vector2(2121, 51)
+position = Vector2(2120, 42)
 
 [node name="BrokenBlock13" parent="." unique_id=1744124390 instance=ExtResource("12_8c8og")]
-position = Vector2(2099, 51)
+position = Vector2(2098, 42)
 
 [node name="pause_menu" parent="." unique_id=2115133450 instance=ExtResource("13_6rqp3")]
 visible = false
@@ -175,6 +175,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="phase_counter" parent="." unique_id=575150972 instance=ExtResource("15_yofw3")]
+process_mode = 3
 phase_text = "fase 1"
 
 [editable path="level_end"]

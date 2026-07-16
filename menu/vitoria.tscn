@@ -16,7 +16,7 @@ script = ExtResource("1_scnxm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=227850849]
 layout_mode = 0
-offset_right = 391.0
+offset_right = 408.0
 offset_bottom = 232.0
 color = Color(0.65425307, 0.6684427, 0.5891032, 1)
 

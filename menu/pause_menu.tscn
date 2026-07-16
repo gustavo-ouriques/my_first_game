@@ -14,7 +14,7 @@ process_mode = 3
 script = ExtResource("1_vy7sn")
 
 [node name="cor" type="ColorRect" parent="." unique_id=269889517]
-offset_right = 430.0
+offset_right = 433.0
 offset_bottom = 239.0
 color = Color(0, 0, 0, 0.19900002)
 

@@ -69,10 +69,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 77.0
-offset_right = -90.0
-offset_bottom = -78.0
+offset_left = 13.0
+offset_top = 71.0
+offset_right = -86.0
+offset_bottom = -71.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.9922275, 0.9129345, 0.8650028, 1)
@@ -80,7 +80,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9647059)
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("3_vio6n")
 theme_override_font_sizes/font_size = 16
-text = "Indo ali Adventures
+text = "Indo ali
+Adventures
 "
 horizontal_alignment = 1
 vertical_alignment = 1

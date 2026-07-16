@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bmu2q2niyibus"]
+
+[ext_resource type="Texture2D" uid="uid://dbm5hejkbcvbj" path="res://sprites/Seasonal Tilesets/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png" id="1_7eq03"]
+[ext_resource type="Texture2D" uid="uid://c1nhgabev53pl" path="res://sprites/Sprite Pack 3/4 - Tommy/Victory_Pose (32 x 32).png" id="2_usg42"]
+[ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="3_7n7hr"]
+
+[node name="Capa" type="Control" unique_id=2019491360]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=984513569]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.023000002
+anchor_bottom = 0.019000001
+offset_right = 382.376
+offset_bottom = 208.048
+texture = ExtResource("1_7eq03")
+
+[node name="Label" type="Label" parent="." unique_id=466326866]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=75505397]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 79.0
+offset_right = 226.0
+offset_bottom = 158.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1688713788]
+layout_mode = 2
+texture = ExtResource("2_usg42")
+expand_mode = 2
+
+[node name="Label2" type="Label" parent="." unique_id=480938360]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 57.0
+offset_right = 139.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.972549, 0.79607844, 0.72156864, 1)
+theme_override_colors/font_shadow_color = Color(0.01492132, 0.012184196, 0.00022719368, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_7n7hr")
+text = "INDO ALI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1223738480]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 74.0
+offset_right = 151.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.972549, 0.79607844, 0.72156864, 1)
+theme_override_colors/font_shadow_color = Color(0.015686275, 0.011764706, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_7n7hr")
+text = "ADVENTURES"
+horizontal_alignment = 1
+vertical_alignment = 1

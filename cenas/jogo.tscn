@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d24yn08wcc3lq" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="13_8tqj5"]
 [ext_resource type="Shader" uid="uid://dydawy8vsteo" path="res://shaders/movement_clouds.gdshader" id="13_c8qsu"]
 [ext_resource type="PackedScene" uid="uid://tlwnylukyxmf" path="res://menu/phase_counter.tscn" id="15_lcfgm"]
+[ext_resource type="FontFile" uid="uid://dwbjei5u702ej" path="res://sprites/Boring Time.otf" id="16_mikth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxwg"]
 size = Vector2(60, 707.75)
@@ -164,6 +165,18 @@ phase_text = "fase 2"
 [node name="CharacterBody2D" parent="." unique_id=1593442380 instance=ExtResource("1_k46e6")]
 position = Vector2(12, 157)
 max_jump_count = 1
+
+[node name="Label" type="Label" parent="." unique_id=40935727]
+offset_left = 1615.0
+offset_top = -466.0
+offset_right = 1647.0
+offset_bottom = -446.0
+theme_override_fonts/font = ExtResource("16_mikth")
+theme_override_font_sizes/font_size = 5
+text = "PULA!
+⬅️"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="level_end"]
 [editable path="MovingPlataform"]
