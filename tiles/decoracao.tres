@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b344k7gq8wasm" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="2_on68c"]
 [ext_resource type="Texture2D" uid="uid://dm4p18us55lvw" path="res://sprites/Mini FX, Items & UI/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="3_aoqg4"]
 [ext_resource type="Texture2D" uid="uid://cgs5yr4g4u560" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="3_uce3s"]
+[ext_resource type="Texture2D" uid="uid://diwu6fn7hqwvp" path="res://sprites/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="4_63vbj"]
 [ext_resource type="Texture2D" uid="uid://vnmiag6v0215" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="4_aoqg4"]
 [ext_resource type="Texture2D" uid="uid://sdchs5l2wd3c" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Bubbling_Oil_frames (16 x 32).png" id="5_63vbj"]
 [ext_resource type="Texture2D" uid="uid://dqfxlptqdrf0c" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="6_amyr4"]
@@ -64,6 +65,92 @@ texture = ExtResource("1_ubr2w")
 1:1/0 = 0
 5:1/size_in_atlas = Vector2i(3, 3)
 5:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx1n1"]
+texture = ExtResource("4_63vbj")
+9:1/0 = 0
+11:1/0 = 0
+13:1/0 = 0
+15:1/0 = 0
+17:1/0 = 0
+19:1/0 = 0
+21:1/0 = 0
+1:2/0 = 0
+6:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+9:4/0 = 0
+11:4/0 = 0
+13:4/0 = 0
+15:4/0 = 0
+17:4/0 = 0
+19:4/0 = 0
+21:4/0 = 0
+23:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+15:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+20:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+15:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+20:8/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6mw0"]
 texture = ExtResource("3_uce3s")
@@ -215,3 +302,4 @@ sources/8 = SubResource("TileSetAtlasSource_uce3s")
 sources/9 = SubResource("TileSetAtlasSource_aoqg4")
 sources/10 = SubResource("TileSetAtlasSource_63vbj")
 sources/11 = SubResource("TileSetAtlasSource_amyr4")
+sources/12 = SubResource("TileSetAtlasSource_xx1n1")
