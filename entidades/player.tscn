@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://q5twvilb6k7t" path="res://sprites/Sprite Pack 3/4 - Tommy/Walking (32 x 32).png" id="4_2qu0p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qu0p"]
-size = Vector2(20, 27)
+size = Vector2(20, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1rr4"]
 atlas = ExtResource("2_7y4ih")
@@ -164,7 +164,7 @@ collision_mask = 9
 script = ExtResource("1_le3lr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845646383]
-position = Vector2(0, 5.5)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_2qu0p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2011381918]
