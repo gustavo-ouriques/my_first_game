@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 func set_direction(Esqueleto_direction): #esse (direction) vem de fora.
 	direction = Esqueleto_direction
-	#muda a direcao do osso de acordo com o esqueleto. video #31 minuto: 25:00
+	#muda a direcao do osso de acordo com o esqueleto.
 	animated.flip_h = direction < 0
 
 func _on_self_destruct_timer_timeout() -> void:
