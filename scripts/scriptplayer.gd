@@ -99,8 +99,9 @@ func go_to_dead_state():
 	velocity.x = 0
 	GameManager.last_scene_path = get_tree().current_scene.scene_file_path #para carregar a ultima fase
 	#reload_timer.start() // nao preciso mais
+	var tree = get_tree()  # guarda a referência ANTES do await para avitar bug
 	await animated.animation_finished # novo
-	get_tree().change_scene_to_file("res://menu/game_over.tscn") #novo
+	tree.change_scene_to_file("res://menu/game_over.tscn") #novo
 	
 func idle_state():
 	move()
